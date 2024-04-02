@@ -1,0 +1,110 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Colours
+// TODO Color variables should use rgba().
+$abc-yellow:                  #f2a900;
+$abc-yellow-medium:           #ffcb4d;
+$abc-banner-info:             #1c68a5;
+$abc-banner-sale:             #4a935e;
+$abc-medium-blue:             #5986b1; // yet another color.
+
+$primary:       $qrk-yellow;
+$secondary:     $qrk-black;
+$success:       #4a935e !default;
+$info:          #2a78b7 !default;
+$danger:        $qrk-red !default;
+
+$border-color:                #dee2e6;
+$border-radius:               0.25rem !default;
+$border-radius-lg:            0.3rem !default;
+$border-radius-sm:            0.2rem !default;
+
+$btn-border-radius:           1.3125rem;
+$btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+
+$btn-padding-x: 1.25rem;
+$btn-padding-y: 0;
+
+$card-padding:        1.25rem;
+$card-padding-md-up:  1.5rem;
+$card-padding-llg-up:  1.5rem;
+
+// Body
+$body-bg:                       $qrk-grey-blue;
+$body-color:                    $qrk-black;
+
+// Spacing
+$page-margin-xs: 1.5rem;
+$page-margin-sm: 1.5rem;
+$page-margin-md: 1.5rem;
+$page-margin-lg: 4.5rem;
+$page-margin-xl: 4.5rem;
+
+// font sizes.
+$font-size-huge:     1.75rem;         // 28px
+$font-size-largest:  1.5rem;          // 24px
+$font-size-larger:   1.25rem;         // 20px
+$font-size-large:    1.125rem;        // 18px
+$font-size-medium:   $font-size-base; // 16px
+$font-size-small:    0.875rem;        // 14px
+$font-size-smaller:  0.75rem;         // 12px
+$font-size-smallest: 0.6875rem;       // 11px
+
+$font-weight-normal:            400;
+$font-weight-light:             300;
+$font-weight-bold:              700;
+$font-weight-bolder:            900;
+
+$font-weight-base:              $font-weight-normal;
+$line-height-base:              1.75; // 28px
+$line-height-medium:            1.5; // ~ 24px
+$line-height-small:             1.42; // ~ 23px
+$line-height-smaller:           1.23; // ~ 20px
+
+$h1-font-size:                  $font-size-base * 3.5;    // 56px
+$h2-font-size:                  $font-size-base * 2.25;   // 36px // was * 3    = 48px
+$h2-font-size-expedition-page:  $font-size-base * 2.75;   // 44px
+$h3-font-size:                  $font-size-base * 1.75;   // 28px // was * 2.25 = 36px
+$h3-font-size-expedition-page:  $font-size-base * 2.125;  // 34px
+$h4-font-size:                  $font-size-base * 1.375;  // 22px // was * 1.75 = 28px
+$h5-font-size:                  $font-size-base * 1.125;  // 18px
+$h6-font-size:                  $font-size-base;          // 16px
+$subheading-font-size:          $font-size-base * 0.875;  // 14px
+
+// @TODO: to determine later
+// $headings-margin-bottom:      ($spacer / 2) !default;
+$headings-font-family:          $qrk-font-family-secondary;
+$headings-font-weight:          $font-weight-base;
+$headings-line-height:          $qrk-h1-line-height;
+$headings-color:                $qrk-black;
+
+$paragraphs-text-max-width:      50rem;
+
+
+// Style anchor elements.
+$link-color:                $qrk-black;
+$link-decoration:           underline;
+$link-hover-color:          $qrk-black;
+$link-hover-decoration:     underline;
+
+$price-prefix-font-size:    0.8125rem; //13px
+
+// Facet Drawer.
+$facet-drawer-bg: #f7f9fb;
+
+$grid-breakpoints: (
+  xs: 0,     // 575
+  sm: 576px, // 767
+  md: 768px, // 991
+  lg: 992px, // 1279
+  llg: 1280px, // 1439
+  xl: 1440px
+);
+
+$uniqeid : unique_id();

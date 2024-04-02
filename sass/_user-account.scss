@@ -1,0 +1,170 @@
+// User Registration form.
+.user-form {
+  .password-strength,
+  div.password-confirm,
+  .password-suggestions {
+    font-weight: $font-weight-bold;
+    padding: 0.25rem 0;
+    font-size: $font-size-smallest;
+    color: $gray-600;
+  }
+
+  .password-strength__meter {
+    background-color: $gray-100;
+
+    .password-strength__indicator {
+      background-color: $gray-700;
+
+      &.is-weak {
+        background-color: $danger;
+      }
+
+      &.is-fair {
+        background-color: $warning;
+      }
+
+      &.is-good {
+        background-color: $info;
+      }
+
+      &.is-strong {
+        background-color: $success;
+      }
+    }
+  }
+
+  .password-suggestions {
+    font-weight: $font-weight-normal;
+  }
+
+  div.password-confirm {
+    font-weight: $font-weight-bold;
+
+    span {
+      text-transform: uppercase;
+
+      &.error {
+        color: $qrk-red;
+      }
+
+      &.ok {
+        color: $success;
+      }
+    }
+  }
+
+  // Hide some stuff that makes the form appear too cluttered.
+  #edit-pass--description {
+    display: none;
+  }
+}
+
+// Overrides for the User login form.
+.user-page {
+  .user-local-tasks {
+    display: none;
+  }
+
+  .page__content {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .container-fluid {
+      padding-left: 2.25rem;
+      padding-right: 2.25rem;
+
+      @include media-breakpoint-only(xl) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// View password icon positioning.
+.form-item-pass-pass1,
+.form-item-pass-pass2 {
+  .shwpd {
+    display: inherit;
+    position: relative;
+    float: right;
+    bottom: 1.7rem;
+    right: 0.5rem;
+  }
+}
+
+.user-register-form {
+  #edit-pass {
+    display: block;
+  }
+}
+
+.user-form-wrapper {
+  background-color: $qrk-white;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.04);
+  padding: 3rem; //$grid-gutter-width;
+
+  .row {
+    margin: 0;
+  }
+
+  h3.component__title--center {
+    font-size: $h3-font-size;
+    margin-bottom: 2.5rem;
+    margin-top: 0;
+    padding: 0;
+
+    &::before {
+      background-color: $qrk-white;
+    }
+  }
+
+  .component__title--left {
+    &::before {
+      top: 0.15em;
+      margin-top: 0;
+    }
+  }
+
+  #edit-actions {
+    text-align: center;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin-top: 2.5rem;
+
+    #edit-submit {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .user-form-additional-actions {
+    margin-top: 2rem;
+  }
+
+}
+
+.user-page-copy {
+  * {
+    color: $qrk-white;
+  }
+
+  h1.component__title--left {
+    &:before {
+      margin-top: -2rem;
+    }
+  }
+
+  .user-form-additional-actions {
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    margin-top: 2.5rem;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .component--image-with-text__header {
+    padding-top: 0;
+  }
+}

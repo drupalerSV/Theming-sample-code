@@ -1,0 +1,39 @@
+.basic-cards {
+  padding-bottom: 2rem;
+
+  .view-group_title {
+    @include abc-title('center');
+
+    max-width: 100%;
+    margin-top: 3rem;
+    padding-top: 1rem;
+  }
+
+  .views-row {
+    @extend .expedition--teaser;
+
+    padding: $grid-gutter-width;
+
+    h3 { 
+      font-size: 1.25rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      margin-top: 0.25rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+    // CTA
+    .views-field-view-node {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+}

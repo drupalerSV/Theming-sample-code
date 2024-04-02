@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for the photographic-journal view page.
+ */
+#}
+
+<div class="page">
+  {% block nav %}
+    {% include "@abc_theme/page/nav.html.twig" %}
+  {% endblock nav %}
+
+  {% block main %}
+    <main>
+      {% if page.header %}
+        <header class="page__header mb-3">
+          {{ page.header }}
+        </header>
+      {% endif %}
+      {% if page.content %}
+        {% block page_content %}
+          {{ qrk_theme_messages }}
+          {{ page.content }}
+        {% endblock %}
+      {% endif %}
+    </main>
+  {% endblock %}
+
+  {% block footer %}
+    {% include "@abc_theme/page/footer.html.twig" %}
+  {% endblock %}
+</div>

@@ -1,0 +1,57 @@
+{#
+/**
+ * @file
+ * Template for a Node component.
+ */
+#}
+
+{% if content.field_hero_banner and content.field_hero_banner['#items'] %}
+  {% set hero_banner_paragraph_type = content.field_hero_banner.0['#paragraph'].bundle() %}
+{% else %}
+  {% set hero_banner_paragraph_type = 'hero-default' %}
+{% endif %}
+
+{%
+  set classes = [
+  'node',
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  node.bundle|clean_class,
+  node.bundle|clean_class ~ '--' ~ view_mode|clean_class,
+  view_mode|clean_class,
+  'hero-banner-type--' ~ hero_banner_paragraph_type|clean_class
+]
+%}
+{% block article %}
+  <article{{ attributes.addClass(classes) }}>
+    {% block hero_banner %}
+      {% if content.field_hero_banner and content.field_hero_banner['#items'] %}
+        {{ content.field_hero_banner }}
+      {% else %}
+        {% embed "@abc_theme/paragraph/hero_default/paragraph--hero-default.html.twig" %}
+          {% set node_title = node.getTitle() %}
+        {% endembed %}
+      {% endif %}
+    {% endblock %}
+
+    {% block content %}
+      {% if user.hasPermission('administer nodes') %}
+        <div class="container-fluid abc-local-tasks">
+        {{ abc_theme_local_tasks }}
+        </div>
+      {% endif %}
+
+      {% if abc_theme_messages is defined %}
+        <div class="container abc-messages">
+          <div class="container-fluid">
+            {{ abc_theme_messages }}
+          </div>
+        </div>
+      {% endif %}
+
+      {{ content|without('field_hero_banner') }}
+    {% endblock %}
+
+  </article>
+{% endblock %}
